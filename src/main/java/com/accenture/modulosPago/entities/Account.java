@@ -26,6 +26,7 @@ public class Account {
     @Transient
     private User user;
     private Long userId;
+    private Boolean isActive;
 
     public Account() {
     }
@@ -37,6 +38,7 @@ public class Account {
         this.creationDate = LocalDate.now();
         this.user = user;
         this.userId = user.getId();
+        this.isActive = true;
     }
 
 
@@ -45,6 +47,7 @@ public class Account {
         this.cbu = accountDto.getCbu();
         this.balance = accountDto.getBalance();
         this.creationDate = accountDto.getCreationDate();
+        this.isActive = true;
     }
 
     public Long getId() {
@@ -101,5 +104,13 @@ public class Account {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 }

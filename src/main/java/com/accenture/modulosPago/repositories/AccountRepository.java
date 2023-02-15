@@ -1,4 +1,4 @@
-package com.accenture.modulosPago.repositorys;
+package com.accenture.modulosPago.repositories;
 
 import com.accenture.modulosPago.entities.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,10 +9,14 @@ import java.util.Optional;
 
 @RepositoryRestResource
 public interface AccountRepository extends JpaRepository<Account, Long> {
-    List<Account> findAllByUserIdOrderByIdDesc(Long userId);
-    List<Account> findAllByUserId(Long userId);
+    Optional<Account> findByUserIdOrderByIdDesc(Long userId);
 
-    Account findByAccountNumber (String accountNumber);
-    Account findByCbu (String cbu);
+
+    Account findByAccountNumber(String accountNumber);
+
+    Account findByCbu(String cbu);
+    List<Account> findByUserIdAndIsActive(Long userId, Boolean isActive);
+
+
 
 }

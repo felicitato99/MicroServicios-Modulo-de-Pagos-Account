@@ -13,7 +13,6 @@ public class User {
     private String dni;
     private String email;
     private String password;
-    private Long accountId;
 
     public Long getId() {
         return id;
@@ -63,11 +62,4 @@ public class User {
         this.password = password;
     }
 
-    public Long getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
-    }
 }

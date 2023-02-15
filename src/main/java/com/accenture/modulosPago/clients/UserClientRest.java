@@ -18,7 +18,13 @@ public interface UserClientRest {
 
     @GetMapping("/api/user/list/{id}")
     public User getById(@PathVariable Long id);
+    @PostMapping("api/user/addAccountUser")
+    public ResponseEntity<Object> addAccountUser(@RequestBody Account account);
 
-    @PostMapping("/api/user/AddAccountToUser")
-    public ResponseEntity<Object> addAccountToUser(@RequestBody Account account);
+    @GetMapping("/list/number/{number}")
+    public ResponseEntity<Object> getByNumberAccount(@PathVariable String number);
+
+    @GetMapping("/api/user/list/{id}")
+    public User detail(@PathVariable Long id);
+
 }
